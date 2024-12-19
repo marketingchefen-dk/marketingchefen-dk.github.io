@@ -1,8 +1,10 @@
 module.exports = function(eleventyConfig) {
-    return {
-      dir: {
-        input: "src",
-        output: "_site"
-      }
-    };
+  eleventyConfig.addPassthroughCopy({ "src/favicon/*": "/" });
+
+  return {
+    dir: {
+      input: "src",
+      output: "_site"
+    }
   };
+};
