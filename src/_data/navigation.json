@@ -1,0 +1,70 @@
+{
+    "main": [
+        {
+            "title": "Services",
+            "url": "/services/",
+            "children": [
+                {
+                    "title": "Consulting",
+                    "url": "/services/consulting/"
+                },
+                {
+                 "title": "Interim CMO",
+                    "url": "/services/interim-cmo/"
+                },
+                {
+                    "title": "Fractional CMO",
+                    "url": "/services/fractional-cmo/"
+                },
+                {
+                    "title": "Rekruttering",
+                    "url": "/services/rekruttering/"
+                },
+                {
+                    "title": "Headhunting",
+                    "url": "/services/headhunting/"
+                }
+            ]  
+        },
+        {
+            "title": "Bureauer",
+            "url": "/bureauer/",
+            "children": [
+                {
+                    "title": "Marketing",
+                    "url": "/bureauer/marketing/"
+                },
+                {
+                    "title": "Reklame",
+                    "url": "/bureauer/reklame/"
+                },
+                {
+                    "title": "Media",
+                    "url": "/bureauer/medie/"
+                },
+                {
+                    "title": "Kommunikation",
+                    "url": "/bureauer/kommunikation/"
+                }            
+            ]
+        },
+        {
+            "title": "Community",
+            "url": "/community/",
+            "children": [
+                {
+                    "title": "Blog",
+                    "url": "/blog/"
+                },
+                {
+                    "title": "Værktøjer",
+                    "url": "/vaerktoejer/"
+                },
+                {
+                    "title": "Join vores Slack",
+                    "url": "/slack/"
+                }
+            ]
+        }
+    ]
+}

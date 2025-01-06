@@ -1,0 +1,103 @@
+<nav class="bg-white shadow" x-data="{ isOpen: false, dropdownOpen: {} }">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo/Site Name -->
+      <div class="flex-shrink-0">
+        <a href="/" class="text-xl font-bold">Marketingchefen</a>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:block">
+        <ul class="flex space-x-8">
+          {%- for item in navigation.main -%}
+            <li class="relative" 
+                @mouseenter="dropdownOpen['{{ loop.index }}'] = true" 
+                @mouseleave="dropdownOpen['{{ loop.index }}'] = false">
+              <a href="{{ item.url }}" 
+                 class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md inline-flex items-center {% if page.url == item.url %}font-bold text-blue-600{% endif %}">
+                {{ item.title }}
+                {% if item.children %}
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                {% endif %}
+              </a>
+              {% if item.children %}
+                <div x-show="dropdownOpen['{{ loop.index }}']"
+                     x-transition:enter="transition ease-out duration-100"
+                     x-transition:enter-start="transform opacity-0 scale-95"
+                     x-transition:enter-end="transform opacity-100 scale-100"
+                     x-transition:leave="transition ease-in duration-75"
+                     x-transition:leave-start="transform opacity-100 scale-100"
+                     x-transition:leave-end="transform opacity-0 scale-95"
+                     class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  <div class="py-1">
+                    {% for child in item.children %}
+                      <a href="{{ child.url }}" 
+                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 {% if page.url == child.url %}font-bold text-blue-600 bg-blue-50{% endif %}">
+                        {{ child.title }}
+                      </a>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button type="button" 
+                @click="isOpen = !isOpen"
+                class="text-gray-700 hover:text-gray-900 focus:outline-none">
+          <svg x-show="!isOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg x-show="isOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div x-show="isOpen" 
+       x-transition:enter="transition ease-out duration-100"
+       x-transition:enter-start="transform opacity-0 scale-95"
+       x-transition:enter-end="transform opacity-100 scale-100"
+       x-transition:leave="transition ease-in duration-75"
+       x-transition:leave-start="transform opacity-100 scale-100"
+       x-transition:leave-end="transform opacity-0 scale-95"
+       class="md:hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      {%- for item in navigation.main -%}
+        {% if item.children %}
+          <div x-data="{ subOpen: false }" class="space-y-1">
+            <button @click="subOpen = !subOpen"
+                    class="w-full flex justify-between items-center px-3 py-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 {% if page.url == item.url %}font-bold text-blue-600 bg-blue-50{% endif %}">
+              {{ item.title }}
+              <svg class="w-4 h-4 transform" :class="{ 'rotate-180': subOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="subOpen" class="pl-4">
+              {% for child in item.children %}
+                <a href="{{ child.url }}" 
+                   class="block px-3 py-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 {% if page.url == child.url %}font-bold text-blue-600 bg-blue-50{% endif %}">
+                  {{ child.title }}
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ item.url }}" 
+             class="block px-3 py-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 {% if page.url == item.url %}font-bold text-blue-600 bg-blue-50{% endif %}">
+            {{ item.title }}
+          </a>
+        {% endif %}
+      {%- endfor -%}
+    </div>
+  </div>
+</nav>
