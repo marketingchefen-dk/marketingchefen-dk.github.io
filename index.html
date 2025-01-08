@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="font-lexend">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="stylesheet" href="/css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
         <title>Marketingchefen - Rådgivning, rekruttering og community</title>
         <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
@@ -17,12 +18,14 @@
     <div class="flex justify-between items-center h-16">
       <!-- Logo/Site Name -->
       <div class="flex-shrink-0">
-        <a href="/" class="text-xl font-bold">Marketingchefen</a>
+        <a href="/">
+          <img src="/images/marketingchefen-logo.png" alt="Marketingchefen" class="h-8 w-auto object-contain" />
+        </a>
       </div>
       
       <!-- Desktop Menu -->
-      <div class="hidden md:block">
-        <ul class="flex space-x-8"><li class="relative" 
+      <div class="hidden md:block w-full">
+        <ul class="flex space-x-8 justify-center"><li class="relative" 
                 @mouseenter="dropdownOpen['1'] = true" 
                 @mouseleave="dropdownOpen['1'] = false">
               <a href="/services/" 
@@ -58,6 +61,11 @@
                       <a href="/services/fractional-cmo/" 
                          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">
                         Fractional CMO
+                      </a>
+                    
+                      <a href="/services/bestyrelse/" 
+                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">
+                        Bestyrelse
                       </a>
                     
                       <a href="/services/rekruttering/" 
@@ -147,18 +155,32 @@
                         Blog
                       </a>
                     
+                      <a href="/kalender/" 
+                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">
+                        Kalender
+                      </a>
+                    
                       <a href="/vaerktoejer/" 
                          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">
                         Værktøjer
                       </a>
                     
-                      <a href="/slack/" 
+                      <a href="/award/" 
                          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">
-                        Join vores Slack
+                        Award
                       </a>
                     
                   </div>
                 </div>
+              
+            </li><li class="relative" 
+                @mouseenter="dropdownOpen['4'] = true" 
+                @mouseleave="dropdownOpen['4'] = false">
+              <a href="/slack/" 
+                 class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md inline-flex items-center ">
+                Join vores Slack
+                
+              </a>
               
             </li></ul>
       </div>
@@ -212,6 +234,11 @@
                 <a href="/services/fractional-cmo/" 
                    class="block px-3 py-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 ">
                   Fractional CMO
+                </a>
+              
+                <a href="/services/bestyrelse/" 
+                   class="block px-3 py-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 ">
+                  Bestyrelse
                 </a>
               
                 <a href="/services/rekruttering/" 
@@ -275,25 +302,35 @@
                   Blog
                 </a>
               
+                <a href="/kalender/" 
+                   class="block px-3 py-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 ">
+                  Kalender
+                </a>
+              
                 <a href="/vaerktoejer/" 
                    class="block px-3 py-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 ">
                   Værktøjer
                 </a>
               
-                <a href="/slack/" 
+                <a href="/award/" 
                    class="block px-3 py-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 ">
-                  Join vores Slack
+                  Award
                 </a>
               
             </div>
           </div>
+        
+          <a href="/slack/" 
+             class="block px-3 py-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 ">
+            Join vores Slack
+          </a>
         </div>
   </div>
 </nav>
 
         <main>
             <h1 class="text-blue-600 text-3xl">Welcome to my blog!</h1>
-<p>Boom stickatyboom!</p>
+<p>Boom stickatyboom...!</p>
         </main>
 
         
