@@ -17,6 +17,10 @@
                     "url": "/services/fractional-cmo/"
                 },
                 {
+                    "title": "Bestyrelse",
+                    "url": "/services/bestyrelse/"
+                },
+                {
                     "title": "Rekruttering",
                     "url": "/services/rekruttering/"
                 },
@@ -57,14 +61,22 @@
                     "url": "/blog/"
                 },
                 {
+                    "title": "Kalender",
+                    "url": "/kalender/"
+                },
+                {
                     "title": "Værktøjer",
                     "url": "/vaerktoejer/"
                 },
                 {
-                    "title": "Join vores Slack",
-                    "url": "/slack/"
+                    "title": "Award",
+                    "url": "/award/"
                 }
             ]
+        },
+        {
+            "title": "Join vores Slack",
+            "url": "/slack/"
         }
     ]
 }

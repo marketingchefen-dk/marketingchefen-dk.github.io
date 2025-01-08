@@ -3,12 +3,14 @@
     <div class="flex justify-between items-center h-16">
       <!-- Logo/Site Name -->
       <div class="flex-shrink-0">
-        <a href="/" class="text-xl font-bold">Marketingchefen</a>
+        <a href="/">
+          <img src="/images/marketingchefen-logo.png" alt="Marketingchefen" class="h-8 w-auto object-contain" />
+        </a>
       </div>
       
       <!-- Desktop Menu -->
-      <div class="hidden md:block">
-        <ul class="flex space-x-8">
+      <div class="hidden md:block w-full">
+        <ul class="flex space-x-8 justify-center">
           {%- for item in navigation.main -%}
             <li class="relative" 
                 @mouseenter="dropdownOpen['{{ loop.index }}'] = true" 

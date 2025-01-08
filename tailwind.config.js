@@ -4,7 +4,11 @@ module.exports = {
       './src/**/*.{html,njk,md}'
     ],
     theme: {
-      extend: {},
+      extend: {
+        fontFamily: {
+          'lexend': ['Lexend', 'sans-serif'],
+        },
+      },
     },
     plugins: [],
   }
